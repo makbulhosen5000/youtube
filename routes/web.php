@@ -15,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     //dd(app());
+
     return view('welcome');
 });
+
+Route::get('/city',function(){
+    return view('city');
+})->middleware('city');
 
 Route::get('/service', function () {
     app()->make('first_service_helper');
