@@ -13,18 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //dd(app());
-    return view('welcome');
+Route::get('/country', function () {
+
+    return "Bangladesh";
 });
 
-Route::get('/service', function () {
-    app()->make('first_service_helper');
-    return view('welcome');
+
+Route::get('/number', function () {
+
+    return view ('number');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
