@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class MyServiceProvider extends ServiceProvider
+class SumServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -13,7 +13,11 @@ class MyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //for binding facades
+        app()->bind('sum',function(){
+            return new \App\Repositories\sum;
+        });
+
     }
 
     /**
@@ -23,11 +27,6 @@ class MyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //example $data toke data from database for service provider
-        $data =array();
-        $data['a']=10;
-        $data['b']=20;
-        $data['c']=30;
-        view()->share('number',$data);
+        //
     }
 }

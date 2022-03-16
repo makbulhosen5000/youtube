@@ -23,4 +23,8 @@ Route::get('/number', function () {
 
     return view ('number');
 });
+Route::get('/sum', function () {
+
+    Sum::mySum();
+});
 
